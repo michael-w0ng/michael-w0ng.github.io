@@ -1,0 +1,36 @@
+.main {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 30px;
+  padding-bottom: 100px;
+}
+
+.details-flex {
+  display: inline-flex;
+  justify-content: space-between
+  width: 80vw;
+}
+
+.dimensions {
+  border: 1px dashed grey;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  padding: 80px;
+}
+
+.volume h4 p {
+  display: inline-flex;
+}
+
+.stock-amount h4 p {
+  display: inline-flex;
+}
+
+.square-roll h4 p {
+  display: inline-flex;
+}
+
+.square-roll2 h4 p {
+  display: inline-flex;
+}
