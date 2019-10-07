@@ -1,5 +1,4 @@
 .main {
-  color: red;
   padding-left: 100px;
   padding-right: 100px;
   padding-top: 30px;
@@ -14,6 +13,7 @@
 
 .dimensions {
   border: 1px dashed grey;
+  border-radius: 10px;
   display: inline-flex;
   justify-content: center;
   align-content: center;
