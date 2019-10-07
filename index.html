@@ -1,1 +1,271 @@
-Hello World
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Smith Repository</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div class="main">
+    <div class="section-container">
+
+      <div class="details">
+        <h1>Your Specifications</h1>
+        <div class="details-flex">
+          <div class="dimensions">
+            <div class="ring-details">
+              <h2>Final Ring Dimensions</h2>
+              <h4>Width<input class="input-width" type="number" name="">mm</h4>
+              <h4>Thickness<input class="input-thickness" type="number" name="">mm</h4>
+
+              <h4>Length Input?</h4>
+              <select onchange="yesnoCheck(this);">
+                <option>Select a Length Method</option>
+                <option value="len">Length (in mm)</option>
+                <option value="rlen">Ring Size</option>
+              </select>
+
+              <div id="ifYes" style="display: none;">
+                  <label for="car"></label> <input type="text" id="car" name="car" /><br />
+              </div>
+
+
+              <div id="lengthinput"  style="display: none;">
+                <h4 >Length
+                <input class="input-length" type="number" name="">
+                <div class="lengthDiv">mm</div></h4>
+              </div>
+
+              <div id="ringinput" class="ring-size" style="display: none;">
+                <h4>Ring Size - Internal Diameter (mm)</h4>
+                <select id="ringdropdown" onchange="getRingLengthValue();">
+                  <option value="0">Pick a Size</option>
+                  <option value="11.95">A = 11.95mm</option>
+                  <option value="12.18">A 1/2 = 12.18mm</option>
+                  <option value="12.37">B = 12.37mm</option>
+                  <option value="12.60">B 1/2 = 12.60mm</option>
+                  <option value="12.78">C = 12.78mm</option>
+                  <option value="13.00">C 1/2 = 13.00mm</option>
+                  <option value="13.21">D = 13.21mm</option>
+                  <option value="13.41">D 1/2 = 13.41mm</option>
+                  <option value="13.61">E = 13.61mm</option>
+                  <option value="13.83">E 1/2 = 13.83mm</option>
+                  <option value="14.05">F = 14.05mm</option>
+                  <option value="14.25">F 1/2 = 14.25mm</option>
+                  <option value="14.36">G = 14.36mm</option>
+                  <option value="14.56">G 1/2 = 14.56mm</option>
+                  <option value="14.65">H = 14.65mm</option>
+                  <option value="14.86">H 1/2 = 14.86mm</option>
+                  <option value="15.04">I = 15.04mm</option>
+                  <option value="15.27">I 1/2 = 15.27mm</option>
+                  <option value="15.40">J = 15.40mm</option>
+                  <option value="15.70">J 1/2 = 15.70mm</option>
+                  <option value="15.80">H = 15.80mm</option>
+                  <option value="16.00">H 1/2 = 16.00mm</option>
+                  <option value="16.10">L = 16.10mm</option>
+                  <option value="16.41">L 1/2 = 16.41mm</option>
+                  <option value="16.51">M = 16.51mm</option>
+                  <option value="16.71">M 1/2 = 16.71mm</option>
+                  <option value="16.92">N = 16.92mm</option>
+                  <option value="17.13">N 1/2 = 17.13mm</option>
+                  <option value="17.35">O = 17.35mm</option>
+                  <option value="17.45">O 1/2 = 17.45mm</option>
+                  <option value="17.75">P = 17.75mm</option>
+                  <option value="17.97">P 1/2 = 17.97mm</option>
+                  <option value="18.19">Q = 18.19mm</option>
+                  <option value="18.35">Q 1/2 = 18.35mm</option>
+                  <option value="18.61">R = 18.61mm</option>
+                  <option value="18.80">R 1/2 = 18.80mm</option>
+                  <option value="19.10">S = 19.10mm</option>
+                  <option value="19.31">S 1/2 = 19.31mm</option>
+                  <option value="19.51">T = 19.51mm</option>
+                  <option value="19.84">T 1/2 = 19.84mm</option>
+                  <option value="20.02">U = 20.02mm</option>
+                  <option value="20.20">U 1/2 = 20.20mm</option>
+                  <option value="20.32">V = 20.32mm</option>
+                  <option value="20.68">V 1/2 = 20.68mm</option>
+                  <option value="20.76">W = 20.76mm</option>
+                  <option value="20.94">W 1/2 = 20.94mm</option>
+                  <option value="21.18">X = 21.18mm</option>
+                  <option value="21.30">X 1/2 = 21.30mm</option>
+                  <option value="21.49">Y = 21.49mm</option>
+                  <option value="21.69">Y 1/2 = 21.69mm</option>
+                  <option value="21.89">Z = 21.89mm</option>
+                  <option value="22.10">Z 1/2 = 22.10mm</option>
+                  <option value="22.33">Z + 1 = 22.33mm</option>
+                  <option value="22.69">Z + 2 = 22.69mm</option>
+                  <option value="23.06">Z + 3 = 23.06mm</option>
+                  <option value="23.47">Z + 4 = 23.47mm</option>
+                  <option value="23.87">Z + 5 = 23.87mm</option>
+                  <option value="24.27">Z + 6 = 24.27mm</option>
+                </select>
+              </div>
+
+
+              <button class="ring-input-btn">Ring Dimensions</button>
+
+            </div>
+          </div>
+          <div class="dimensions">
+            <div class="stock-details">
+              <h2>Initial Stock Dimensions</h2>
+              <h4>Stock Width <input class="stock-width" type="number" name="">mm</h4>
+              <h4>Stock Thickness <input class="stock-thickness" type="number" name="">mm</h4>
+              <button class="stock-input-btn">Stock Dimensions</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="details">
+        <h1>Manipulating Stock Gauge</h1>
+        <div class="details-flex">
+          <div class="dimensions">
+            <div class="volume">
+              <h2>Volume of final ring</h2>
+              <h3>Volume = Width x Thickness x Length </h3>
+              <h4>Width = <p class="ring-width"></p></h4>
+              <h4>Thickness = <p class="ring-thickness"></p></h4>
+              <h4>Length = <p id="ring-length"></p><p class="ring-shank-length"></p></h4>
+              <br>
+              <h4>Volume: <div class="volume-result"></div></h4>
+            </div>
+          </div>
+          <div class="dimensions">
+            <div class="stock-amount">
+              <h2>Initial Amount Stock Gauge required</h2>
+              <h3>Length of Stock = Volume ÷ (Stock Width x Stock Thickness)</h3>
+              <h4>Stock Width = <p id="stock-width"></p></h4>
+              <h4>Stock Thickness = <p id="stock-thickness"></p></h4>
+              <div class="stock-result"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="details">
+        <h1>2 Tests for stock gauge reduction</h1>
+        <div class="details-flex">
+          <div class="dimensions">
+            <div class="square-roll">
+              <h2>Roll Stock Gauge down to a smaller square profile</h2>
+              <h3>((Width ÷ Thickness) x 0.8) + Thickness</h3>
+              <h4>Width = <p class="ring-width"></p></h4>
+              <h4>Thickness = <p class="ring-thickness"></p></h4>
+              <div class="square-roll-result"></div>
+            </div>
+          </div>
+          <div class="dimensions">
+            <div class="square-roll2">
+              <h2>TEST Roll Stock Gauge down to a smaller square profile</h2>
+              <h3>Square Profile = ∛ (w² x t)</h3>
+              <h4>Width = <p class="ring-width"></p></h4>
+              <h4>Thickness = <p class="ring-thickness"></p></h4>
+              <div class="square-roll-2-result"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="details">
+        <h1>Specific Gravity Conversion</h1>
+        <div class="details-flex">
+          <div class="dimensions">
+            <div class="SGConversion">
+              <h2>Convert your piece to other metals</h2>
+              <h3>Final Weight = ((Starting Weight ÷ Starting Material SG) x Final Material SG)</h3>
+              <div class="metal-density">
+                <h4>Starting Material - Specific Gravity</h4>
+                <select id="startingMaterialDropdown" >
+<!--                   onchange="getStartingMaterialValue();"
+ -->              <option value="0">Pick a Metal</option>
+                  <option value="1.0">Wax - 1.0</option>
+                  <option value="10.3">925 Silver - 10.3</option>
+                  <option value="15.5">18ct Yellow Gold - 15.5</option>
+                  <option value="15.8">18ct White Gold - 15.8</option>
+                  <option value="15.1">18ct Rose Gold - 15.1</option>
+                  <option value="11.1">9ct Yellow Gold - 11.1</option>
+                  <option value="12.4">9ct White Gold - 12.4</option>
+                  <option value="11.3">9ct Rose Gold - 11.3</option>
+                  <option value="21.45">Platinum - 21.45</option>
+                  <option value="19.3">Fine Gold - 19.3</option>
+                  <option value="10.49">Fine Silver - 10.49</option>
+                  <option value="8.96">Copper - 8.96</option>
+                  <option value="8.5">Brass - 8.5</option>
+                </select>
+              </div>
+              <h4>Starting Weight <input class="input-starting-weight" type="number" name=""> grams</h4>
+
+              <div class="metal-density">
+                <h4>Final Material - Specific Gravity</h4>
+                <select id="finalMaterialDropdown" >
+<!--                   onchange="getFinalMaterialValue();"
+ -->              <option value="0">Pick a Metal</option>
+                  <option value="1.0">Wax - 1.0</option>
+                  <option value="10.3">925 Silver - 10.3</option>
+                  <option value="15.5">18ct Yellow Gold - 15.5</option>
+                  <option value="15.8">18ct White Gold - 15.8</option>
+                  <option value="15.1">18ct Rose Gold - 15.1</option>
+                  <option value="11.1">9ct Yellow Gold - 11.1</option>
+                  <option value="12.4">9ct White Gold - 12.4</option>
+                  <option value="11.3">9ct Rose Gold - 11.3</option>
+                  <option value="21.45">Platinum - 21.45</option>
+                  <option value="19.3">Fine Gold - 19.3</option>
+                  <option value="10.49">Fine Silver - 10.49</option>
+                  <option value="8.96">Copper - 8.96</option>
+                  <option value="8.5">Brass - 8.5</option>
+                </select>
+              </div>
+
+              <button class="convertWeight-input-btn">Convert</button>
+
+              <h4>Final Weight</h4>
+              <div class="finalWeight-result"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="details">
+        <h1>Calculating Weight from Volume</h1>
+        <div class="details-flex">
+          <div class="dimensions">
+            <div class="weightFromVol">
+              <h3>Weight(g) = (Specific Gravity(g/cm^3) x Volume(cm^3)) ÷ 1000</h3>
+              <h4>Material - Specific Gravity</h4>
+              <select id="materialDropdown" >
+                <option value="0">Pick a Metal</option>
+                <option value="1.0">Wax - 1.0</option>
+                <option value="10.3">925 Silver - 10.3</option>
+                <option value="15.5">18ct Yellow Gold - 15.5</option>
+                <option value="15.8">18ct White Gold - 15.8</option>
+                <option value="15.1">18ct Rose Gold - 15.1</option>
+                <option value="11.1">9ct Yellow Gold - 11.1</option>
+                <option value="12.4">9ct White Gold - 12.4</option>
+                <option value="11.3">9ct Rose Gold - 11.3</option>
+                <option value="21.45">Platinum - 21.45</option>
+                <option value="19.3">Fine Gold - 19.3</option>
+                <option value="10.49">Fine Silver - 10.49</option>
+                <option value="8.96">Copper - 8.96</option>
+                <option value="8.5">Brass - 8.5</option>
+              </select>
+              <h4>Volume = <div class="vol-result"></div></h4>
+              <button class="weightFromVol-input-btn">Calculate Weight from Volume</button>
+              <h4><div class="volume-results"></div></h4>
+
+              <h4></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
